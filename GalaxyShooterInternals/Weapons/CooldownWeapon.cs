@@ -65,7 +65,7 @@ namespace GalaxyShooterInternals
         /// <summary>
         ///     Logic for actually firing the weapon.
         /// </summary>
-        public abstract void FireWeapon();
+        protected abstract void FireWeapon();
     }
 
 }

@@ -31,7 +31,7 @@ namespace GalaxyShooterInternals
         /// <summary>
         ///     Fires the weapon by spawning the game object for the projectile.
         /// </summary>
-        public override void FireWeapon()
+        protected override void FireWeapon()
         {
             var firePosition = _fireObject.transform.position;
             GameObject.Instantiate(_spawnObject, (firePosition + new Vector3(0, .7f, 0)), Quaternion.identity);
