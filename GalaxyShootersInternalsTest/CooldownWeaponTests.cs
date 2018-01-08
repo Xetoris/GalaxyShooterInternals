@@ -1,5 +1,4 @@
-﻿using Castle.Core.Internal;
-using GalaxyShooterInternals;
+﻿using GalaxyShooterInternals;
 using NUnit.Framework;
 using NSubstitute;
 
