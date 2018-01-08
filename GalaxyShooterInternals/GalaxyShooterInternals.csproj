@@ -60,6 +60,7 @@
     <Compile Include="Interfaces\IShield.cs" />
     <Compile Include="Interfaces\ITimeProvider.cs" />
     <Compile Include="Interfaces\IWeapon.cs" />
+    <Compile Include="Movement\ViewportBoundMovement.cs" />
     <Compile Include="Powerups\ShieldPowerup.cs" />
     <Compile Include="Powerups\SpeedBoost.cs" />
     <Compile Include="Powerups\WeaponChange.cs" />
