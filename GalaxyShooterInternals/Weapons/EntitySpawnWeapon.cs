@@ -1,6 +1,7 @@
+using GalaxyShooterInternals.Interfaces;
 using UnityEngine;
 
-namespace GalaxyShooterInternals
+namespace GalaxyShooterInternals.Weapons
 {
 
     /// <summary>

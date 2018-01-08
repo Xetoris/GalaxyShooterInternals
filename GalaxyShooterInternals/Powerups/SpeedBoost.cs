@@ -1,8 +1,9 @@
-﻿using System.Collections;
+﻿using GalaxyShooterInternals.Interfaces;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GalaxyShooterInternals
+namespace GalaxyShooterInternals.Powerups
 {
 
     public class SpeedBoost : IPowerup

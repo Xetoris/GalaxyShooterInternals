@@ -1,4 +1,4 @@
-namespace GalaxyShooterInternals
+namespace GalaxyShooterInternals.Interfaces
 {
 
     /// <summary>

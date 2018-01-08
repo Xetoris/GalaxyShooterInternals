@@ -1,4 +1,7 @@
-namespace GalaxyShooterInternals
+using GalaxyShooterInternals.Interfaces;
+using GalaxyShooterInternals.Utility;
+
+namespace GalaxyShooterInternals.Entities
 {
     /// <summary>
     ///     Our simple enemy logic controller.

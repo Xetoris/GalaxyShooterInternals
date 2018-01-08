@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using GalaxyShooterInternals.Utility;
+using UnityEngine;
 
-namespace GalaxyShooterInternals
+namespace GalaxyShooterInternals.Interfaces
 {
     public interface IMovement
     {

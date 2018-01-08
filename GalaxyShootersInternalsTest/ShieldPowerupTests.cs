@@ -1,4 +1,5 @@
-﻿using GalaxyShooterInternals;
+﻿using GalaxyShooterInternals.Interfaces;
+using GalaxyShooterInternals.Powerups;
 using NUnit.Framework;
 using NSubstitute;
 

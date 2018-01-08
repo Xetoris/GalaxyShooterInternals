@@ -1,4 +1,6 @@
-namespace GalaxyShooterInternals
+using GalaxyShooterInternals.Interfaces;
+
+namespace GalaxyShooterInternals.Entities
 {
     /// <summary>
     ///     Our basic health pool implementation.

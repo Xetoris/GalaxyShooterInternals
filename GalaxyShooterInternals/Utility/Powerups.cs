@@ -1,4 +1,4 @@
-namespace GalaxyShooterInternals
+namespace GalaxyShooterInternals.Utility
 {
     /// <summary>
     ///     Collection of our reference strings for powerup types.

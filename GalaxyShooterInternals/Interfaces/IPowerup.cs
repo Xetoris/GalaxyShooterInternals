@@ -1,4 +1,4 @@
-namespace GalaxyShooterInternals
+namespace GalaxyShooterInternals.Interfaces
 {
     /// <summary>
     ///     Interface for a player powerup!

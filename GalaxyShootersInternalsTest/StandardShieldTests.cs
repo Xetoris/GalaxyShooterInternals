@@ -1,4 +1,4 @@
-﻿using GalaxyShooterInternals;
+﻿using GalaxyShooterInternals.Shields;
 using NUnit.Framework;
 
 namespace GalaxyShootersInternalsTest
