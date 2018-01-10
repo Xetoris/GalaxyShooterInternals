@@ -3,7 +3,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: mono:onbuild
+      - image: circleci/ruby
     steps:
       - checkout
       - setup_remote_docker
