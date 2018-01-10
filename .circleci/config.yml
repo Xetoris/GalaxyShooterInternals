@@ -12,4 +12,4 @@ jobs:
           command: docker build -t test-build .
       - run:
           name: Run the Test Command
-          command: docker run test-build ./NUnit.ConsoleRunner.3.7.0/tools/nunit3-console.exe GalaxyShooterInternalsTest.dll -noresult
+          command: docker run test-build mono ./NUnit.ConsoleRunner.3.7.0/tools/nunit3-console.exe GalaxyShooterInternalsTest.dll -noresult
