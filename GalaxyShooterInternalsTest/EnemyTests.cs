@@ -3,7 +3,7 @@ using GalaxyShooterInternals.Interfaces;
 using NSubstitute;
 using NUnit.Framework;
 
-namespace GalaxyShootersInternalsTest
+namespace GalaxyShooterInternalsTest
 {
     [TestFixture]
     public class EnemyTests

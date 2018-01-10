@@ -3,7 +3,7 @@ using GalaxyShooterInternals.Weapons;
 using NUnit.Framework;
 using NSubstitute;
 
-namespace GalaxyShootersInternalsTest
+namespace GalaxyShooterInternalsTest
 {
     public class TestCooldownWeapon : CooldownWeapon
     {

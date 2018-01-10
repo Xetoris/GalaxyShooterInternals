@@ -4,7 +4,7 @@ using NUnit.Framework;
 using NSubstitute;
 
 
-namespace GalaxyShootersInternalsTest
+namespace GalaxyShooterInternalsTest
 {
     [TestFixture]
     public class SpeedBoostTest

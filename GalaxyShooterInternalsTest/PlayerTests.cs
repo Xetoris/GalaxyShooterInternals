@@ -4,7 +4,7 @@ using NSubstitute;
 using NUnit.Framework;
 
 
-namespace GalaxyShootersInternalsTest
+namespace GalaxyShooterInternalsTest
 {
     [TestFixture]
     public class PlayerTests

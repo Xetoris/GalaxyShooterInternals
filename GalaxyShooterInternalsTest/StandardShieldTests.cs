@@ -1,7 +1,7 @@
 ﻿using GalaxyShooterInternals.Shields;
 using NUnit.Framework;
 
-namespace GalaxyShootersInternalsTest
+namespace GalaxyShooterInternalsTest
 {
     [TestFixture]
     public class StandardShieldTests
