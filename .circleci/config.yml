@@ -6,13 +6,7 @@ jobs:
       - image: mono:onbuild
     steps:
       - checkout
-      - run:
-          name: Install Nuget
-          command: |
-              curl https://api.nuget.org/downloads/nuget.exe -o nuget.exe
-              mono nuget.exe update -self
-              mono nuget.exe install NUnit
-              mono nuget.exe install NUnit.Runners
-      - run:
-          name: Run Tests
-          command: ./NUnit.ConsoleRunner.3.7.0/tools/nunit3-console.exe GalaxyShooterInternalsTest.dll -noresult
+      - setup_remote_docker
+      - run: |
+        docker build -t test-build .
+        docker run test-build ./NUnit.ConsoleRunner.3.7.0/tools/nunit3-console.exe GalaxyShooterInternalsTest.dll -noresult
