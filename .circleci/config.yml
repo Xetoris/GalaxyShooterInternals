@@ -9,4 +9,3 @@ jobs:
       - setup_remote_docker
       - run: |
           docker build -t test-build .
-          docker run test-build ./NUnit.ConsoleRunner.3.7.0/tools/nunit3-console.exe GalaxyShooterInternalsTest.dll -noresult
