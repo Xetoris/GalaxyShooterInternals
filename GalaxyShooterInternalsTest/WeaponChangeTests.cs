@@ -17,6 +17,7 @@ namespace GalaxyShooterInternalsTest
             WeaponChange powerup = new WeaponChange(weapon);
 
             Assert.AreEqual(10f, powerup.Duration());
+            Assert.IsTrue(false);
         }
 
         [Test]
