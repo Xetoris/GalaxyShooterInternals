@@ -1,7 +1,4 @@
 ﻿using GalaxyShooterInternals.Interfaces;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 namespace GalaxyShooterInternals.Powerups
 {
