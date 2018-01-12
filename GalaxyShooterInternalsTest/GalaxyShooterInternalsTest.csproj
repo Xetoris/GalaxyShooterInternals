@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CooldownWeaponTests.cs" />
+    <Compile Include="DamageSummaryTests.cs" />
     <Compile Include="EnemyTests.cs" />
     <Compile Include="HealthTests.cs" />
     <Compile Include="PlayerTests.cs" />
