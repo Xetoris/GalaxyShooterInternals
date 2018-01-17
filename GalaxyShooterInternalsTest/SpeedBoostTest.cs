@@ -1,5 +1,6 @@
 ﻿using GalaxyShooterInternals.Interfaces;
 using GalaxyShooterInternals.Powerups;
+using GalaxyShooterInternals.Utility;
 using NUnit.Framework;
 using NSubstitute;
 
@@ -31,6 +32,14 @@ namespace GalaxyShooterInternalsTest
             SpeedBoost powerup = new SpeedBoost(null);
 
             Assert.AreEqual(null, powerup.Duration());
+        }
+
+        [Test]
+        public void SpeedBoostIdentifier()
+        {
+            SpeedBoost powerup = new SpeedBoost(null);
+
+            Assert.AreEqual(Powerups.SPEED, powerup.Identifier());
         }
 
         [Test]

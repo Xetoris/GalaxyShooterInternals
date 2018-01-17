@@ -1,4 +1,5 @@
 ﻿using GalaxyShooterInternals.Interfaces;
+using GalaxyShooterInternals.Utility;
 
 namespace GalaxyShooterInternals.Powerups
 {
@@ -50,6 +51,15 @@ namespace GalaxyShooterInternals.Powerups
         public float? Duration()
         {
             return _buffDuration;
+        }
+
+        /// <summary>
+        ///     Returns the string associated with the shield powerup.
+        /// </summary>
+        /// <returns></returns>
+        public string Identifier()
+        {
+            return Utility.Powerups.SHIELD;
         }
 
         /// <summary>

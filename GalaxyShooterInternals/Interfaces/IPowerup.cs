@@ -21,6 +21,12 @@ namespace GalaxyShooterInternals.Interfaces
         float? Duration();
 
         /// <summary>
+        ///     Returns the identifier for this powerup.
+        /// </summary>
+        /// <returns></returns>
+        string Identifier();
+
+        /// <summary>
         ///     Method to remove the powerup.
         /// </summary>
         /// <param name="target">

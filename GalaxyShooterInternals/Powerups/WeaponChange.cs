@@ -53,6 +53,15 @@ namespace GalaxyShooterInternals.Powerups
         }
 
         /// <summary>
+        ///     Returns the string associated with the tripleshot powerup.
+        /// </summary>
+        /// <returns></returns>
+        public string Identifier()
+        {
+            return Utility.Powerups.TRIPLESHOT;
+        }
+
+        /// <summary>
         /// 	Removes the buff from the player.
         /// </summary>
         /// <param name="player">

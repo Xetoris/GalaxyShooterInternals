@@ -1,5 +1,6 @@
 ﻿using GalaxyShooterInternals.Powerups;
 using GalaxyShooterInternals.Interfaces;
+using GalaxyShooterInternals.Utility;
 using NSubstitute;
 using NUnit.Framework;
 
@@ -37,6 +38,17 @@ namespace GalaxyShooterInternalsTest
             WeaponChange powerup = new WeaponChange(weapon, null);
 
             Assert.AreEqual(null, powerup.Duration());
+        }
+
+        [Test]
+        public void WeaponChangePowerupIdentifier()
+        {
+            var player = Substitute.For<IPlayer>();
+            var weapon = Substitute.For<IWeapon>();
+
+            WeaponChange powerup = new WeaponChange(weapon);
+
+            Assert.AreEqual(Powerups.TRIPLESHOT, powerup.Identifier());
         }
 
         [Test]

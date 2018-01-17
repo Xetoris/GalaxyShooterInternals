@@ -44,6 +44,15 @@ namespace GalaxyShooterInternals.Powerups
         }
 
         /// <summary>
+        ///     Returns the string associated with the speed powerup.
+        /// </summary>
+        /// <returns></returns>
+        public string Identifier()
+        {
+            return Utility.Powerups.SPEED;
+        }
+
+        /// <summary>
         /// 	Removes the buff from the player.
         /// </summary>
         /// <param name="player">

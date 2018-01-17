@@ -1,5 +1,6 @@
 ﻿using GalaxyShooterInternals.Interfaces;
 using GalaxyShooterInternals.Powerups;
+using GalaxyShooterInternals.Utility;
 using NUnit.Framework;
 using NSubstitute;
 
@@ -37,6 +38,16 @@ namespace GalaxyShooterInternalsTest
             ShieldPowerup powerup = new ShieldPowerup(shield, null);
 
             Assert.AreEqual(null, powerup.Duration());
+        }
+
+        [Test]
+        public void ShieldPowerupIdentifier()
+        {
+            var shield = Substitute.For<IShield>();
+
+            ShieldPowerup powerup = new ShieldPowerup(shield, null);
+
+            Assert.AreEqual(Powerups.SHIELD, powerup.Identifier());
         }
 
         [Test]
