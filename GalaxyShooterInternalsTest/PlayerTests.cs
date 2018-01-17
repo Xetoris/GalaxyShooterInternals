@@ -276,6 +276,30 @@ namespace GalaxyShooterInternalsTest
             shield.Received().DamageShield(1);
         }
 
+        [Test]
+        public void ShieldRetrieveCanReturnNull()
+        {
+            Player player = new Player(0f,
+                                       Substitute.For<IWeapon>(),
+                                       Substitute.For<IHealth>());
+
+            Assert.IsNull(player.Shield());
+        }
+
+        [Test]
+        public void ShieldCanBeRetrieved()
+        {
+            var shield = GetShieldInstance();
+
+            Player player = new Player(0f,
+                                       Substitute.For<IWeapon>(),
+                                       Substitute.For<IHealth>(),
+                                       shield);
+
+            Assert.AreSame(shield, player.Shield());
+        }
+
+
         #endregion
 
         /// <summary>

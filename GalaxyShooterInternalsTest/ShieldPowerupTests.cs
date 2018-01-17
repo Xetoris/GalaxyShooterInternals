@@ -53,7 +53,7 @@ namespace GalaxyShooterInternalsTest
         [Test]
         public void ShieldPowerupAppliesShield()
         {
-            var player = Substitute.For<IPlayer>();
+            var player = Substitute.For<IShieldable>();
             var shield = Substitute.For<IShield>();
 
             ShieldPowerup powerup = new ShieldPowerup(shield);
@@ -66,7 +66,7 @@ namespace GalaxyShooterInternalsTest
         [Test]
         public void ShieldPowerupRemovesShield()
         {
-            var player = Substitute.For<IPlayer>();
+            var player = Substitute.For<IShieldable>();
             var shield = Substitute.For<IShield>();
 
             ShieldPowerup powerup = new ShieldPowerup(shield);

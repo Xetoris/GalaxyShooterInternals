@@ -4,7 +4,7 @@ using GalaxyShooterInternals.Utility;
 namespace GalaxyShooterInternals.Powerups
 {
 
-    public class ShieldPowerup : IPowerup
+    public class ShieldPowerup : IPowerup<IShieldable>
     {
         /// <summary>
         /// 	The duration of the buff.
@@ -34,12 +34,12 @@ namespace GalaxyShooterInternals.Powerups
         /// <summary>
         /// 	Applies the shield buff to the player.
         /// </summary>
-        /// <param name="player">
-        /// 	Instance of <see cref="IPlayer"/> we need to apply the buff to.
+        /// <param name="target">
+        /// 	Instance of <see cref="IShieldable"/> we need to apply the buff to.
         /// </param>
-        public void Apply(IPlayer player)
+        public void Apply(IShieldable target)
         {
-            player.ApplyShield(_shield);
+            target.ApplyShield(_shield);
         }
 
         /// <summary>
@@ -65,12 +65,12 @@ namespace GalaxyShooterInternals.Powerups
         /// <summary>
         /// 	Removes the buff from the player.
         /// </summary>
-        /// <param name="player">
-        /// 	Instance of <see cref="IPlayer" /> we need to remove the buff from.
+        /// <param name="target">
+        /// 	Instance of <see cref="IShieldable" /> we need to remove the buff from.
         /// </param>
-        public void Remove(IPlayer player)
+        public void Remove(IShieldable target)
         {
-            player.RemoveShield();
+            target.RemoveShield();
         }
     }
 

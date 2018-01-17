@@ -3,7 +3,7 @@
 namespace GalaxyShooterInternals.Powerups
 {
 
-    public class SpeedBoost : IPowerup
+    public class SpeedBoost : IPowerup<ISpeedable>
     {
         /// <summary>
         /// 	Duration of the power up effect.
@@ -24,12 +24,12 @@ namespace GalaxyShooterInternals.Powerups
         /// <summary>
         /// 	Applies the speed buff to the player.
         /// </summary>
-        /// <param name="player">
-        /// 	Instance of <see cref="IPlayer"/> we need to apply the buff to.
+        /// <param name="target">
+        /// 	Instance of <see cref="ISpeedable"/> we need to apply the buff to.
         /// </param>
-        public void Apply(IPlayer player)
+        public void Apply(ISpeedable target)
         {
-            player.MultiplySpeed(_multiplier);
+            target.MultiplySpeed(_multiplier);
         }
 
         /// <summary>
@@ -55,12 +55,12 @@ namespace GalaxyShooterInternals.Powerups
         /// <summary>
         /// 	Removes the buff from the player.
         /// </summary>
-        /// <param name="player">
-        /// 	Instance of <see cref="IPlayer" /> we need to remove the buff from.
+        /// <param name="target">
+        /// 	Instance of <see cref="ISpeedable" /> we need to remove the buff from.
         /// </param>
-        public void Remove(IPlayer player)
+        public void Remove(ISpeedable target)
         {
-            player.DefaultSpeed();
+            target.DefaultSpeed();
         }
     }
 

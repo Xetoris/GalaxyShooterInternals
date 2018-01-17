@@ -52,12 +52,14 @@
     <Compile Include="Entities\GameTimeProvider.cs" />
     <Compile Include="Entities\Health.cs" />
     <Compile Include="Entities\Player.cs" />
-    <Compile Include="Interfaces\IEnemy.cs" />
+    <Compile Include="Interfaces\IArmable.cs" />
+    <Compile Include="Interfaces\IDamageable.cs" />
     <Compile Include="Interfaces\IHealth.cs" />
     <Compile Include="Interfaces\IMovement.cs" />
-    <Compile Include="Interfaces\IPlayer.cs" />
     <Compile Include="Interfaces\IPowerup.cs" />
     <Compile Include="Interfaces\IShield.cs" />
+    <Compile Include="Interfaces\IShieldable.cs" />
+    <Compile Include="Interfaces\ISpeedable.cs" />
     <Compile Include="Interfaces\ITimeProvider.cs" />
     <Compile Include="Interfaces\IWeapon.cs" />
     <Compile Include="Movement\ViewportBoundMovement.cs" />

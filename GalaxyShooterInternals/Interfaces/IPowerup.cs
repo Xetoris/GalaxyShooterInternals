@@ -3,7 +3,7 @@ namespace GalaxyShooterInternals.Interfaces
     /// <summary>
     ///     Interface for a player powerup!
     /// </summary>
-    public interface IPowerup
+    public interface IPowerup<T>
     {
         /// <summary>
         ///     Method to apply the powerup.
@@ -11,7 +11,7 @@ namespace GalaxyShooterInternals.Interfaces
         /// <param name="target">
         ///     The player logic control to apply the powerup too.
         /// </param>
-        void Apply(IPlayer target);
+        void Apply(T target);
 
         /// <summary>
         ///     Returns the duration the buff is applied for.
@@ -32,7 +32,7 @@ namespace GalaxyShooterInternals.Interfaces
         /// <param name="target">
         ///     The player logic control to remove the powerup from.
         /// </param>
-        void Remove(IPlayer target);
+        void Remove(T target);
     }
 
 }

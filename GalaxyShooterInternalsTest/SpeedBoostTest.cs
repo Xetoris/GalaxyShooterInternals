@@ -45,7 +45,7 @@ namespace GalaxyShooterInternalsTest
         [Test]
         public void AppliesBoostToPlayer()
         {
-            var player = Substitute.For<IPlayer>();
+            var player = Substitute.For<ISpeedable>();
 
             SpeedBoost powerup = new SpeedBoost();
 
@@ -57,7 +57,7 @@ namespace GalaxyShooterInternalsTest
         [Test]
         public void AppliesCustomBoostToPlayer()
         {
-            var player = Substitute.For<IPlayer>();
+            var player = Substitute.For<ISpeedable>();
 
             SpeedBoost powerup = new SpeedBoost(10f, 3f);
 
@@ -69,7 +69,7 @@ namespace GalaxyShooterInternalsTest
         [Test]
         public void RemovesBoostFromPlayer()
         {
-            var player = Substitute.For<IPlayer>();
+            var player = Substitute.For<ISpeedable>();
 
             SpeedBoost powerup = new SpeedBoost();
 

@@ -6,7 +6,7 @@ namespace GalaxyShooterInternals.Entities
     /// <summary>
     /// 	Our game's implementation of IPlayer.
     /// </summary>
-    public class Player : IPlayer
+    public class Player : IArmable, IDamageable, IShieldable, ISpeedable
     {
         /// <summary>
         /// 	The default speed for a player.
@@ -184,6 +184,17 @@ namespace GalaxyShooterInternals.Entities
         public void RemoveShield()
         {
             _shield = null;
+        }
+
+        /// <summary>
+        ///     Returns the current shield.
+        /// </summary>
+        /// <returns>
+        ///     An instance of <see cref="IShield"/>
+        /// </returns>
+        public IShield Shield()
+        {
+            return _shield;
         }
     }
 }

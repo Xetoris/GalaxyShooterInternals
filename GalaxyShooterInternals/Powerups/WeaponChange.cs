@@ -3,7 +3,7 @@
 namespace GalaxyShooterInternals.Powerups
 {
 
-    public class WeaponChange : IPowerup
+    public class WeaponChange : IPowerup<IArmable>
     {
         /// <summary>
         /// 	Duration of the power up effect.
@@ -33,12 +33,12 @@ namespace GalaxyShooterInternals.Powerups
         /// <summary>
         /// 	Applies the weapon buff to the player.
         /// </summary>
-        /// <param name="player">
-        /// 	Instance of <see cref="IPlayer"/> we need to apply the buff to.
+        /// <param name="target">
+        /// 	Instance of <see cref="IArmable"/> we need to apply the buff to.
         /// </param>
-        public void Apply(IPlayer player)
+        public void Apply(IArmable target)
         {
-            player.ChangeWeapon(_newWeapon);
+            target.ChangeWeapon(_newWeapon);
         }
 
         /// <summary>
@@ -64,12 +64,12 @@ namespace GalaxyShooterInternals.Powerups
         /// <summary>
         /// 	Removes the buff from the player.
         /// </summary>
-        /// <param name="player">
-        /// 	Instance of <see cref="IPlayer" /> we need to remove the buff from.
+        /// <param name="target">
+        /// 	Instance of <see cref="IArmable" /> we need to remove the buff from.
         /// </param>
-        public void Remove(IPlayer player)
+        public void Remove(IArmable target)
         {
-            player.DefaultWeapon();
+            target.DefaultWeapon();
         }
     }
 

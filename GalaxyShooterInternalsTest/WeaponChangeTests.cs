@@ -43,7 +43,7 @@ namespace GalaxyShooterInternalsTest
         [Test]
         public void WeaponChangePowerupIdentifier()
         {
-            var player = Substitute.For<IPlayer>();
+            var player = Substitute.For<IArmable>();
             var weapon = Substitute.For<IWeapon>();
 
             WeaponChange powerup = new WeaponChange(weapon);
@@ -54,7 +54,7 @@ namespace GalaxyShooterInternalsTest
         [Test]
         public void AppliesWeaponChangeToPlayer()
         {
-            var player = Substitute.For<IPlayer>();
+            var player = Substitute.For<IArmable>();
             var weapon = Substitute.For<IWeapon>();
 
             WeaponChange powerup = new WeaponChange(weapon);
@@ -67,7 +67,7 @@ namespace GalaxyShooterInternalsTest
         [Test]
         public void RemovesWeaponChangeFromWeapon()
         {
-            var player = Substitute.For<IPlayer>();
+            var player = Substitute.For<IArmable>();
 
             WeaponChange powerup = new WeaponChange(Substitute.For<IWeapon>());
 
