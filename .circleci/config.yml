@@ -3,13 +3,15 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/ruby
+      - image: mono:onbuild
     steps:
       - checkout
-      - setup_remote_docker
       - run:
-          name: Build the Image
-          command: docker build -t test-build .
+          name: Setup NUnit
+          command: nuget install NUnit.Runners && nuget restore ./GalaxyShooterInternals.sln
+      - run:
+          name: Build Project
+          command: xbuild ./GalaxyShooterInternals.sln     
       - run:
           name: Run the Test Command
-          command: docker run test-build mono ./NUnit.ConsoleRunner.3.7.0/tools/nunit3-console.exe GalaxyShooterInternalsTest.dll -noresult
+          command: mono ./NUnit.ConsoleRunner.3.8.0/tools/nunit3-console.exe ./GalaxyShooterInternalsTest/bin/Debug/GalaxyShooterInternalsTest.dll -noresult
