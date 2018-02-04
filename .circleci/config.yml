@@ -10,5 +10,8 @@ jobs:
           name: Setup NUnit
           command: nuget install NUnit.Runners
       - run:
+          name: Build Project
+          command: xbuild ./GalaxyShooterInternals.sln    
+      - run:
           name: Run the Test Command
           command: mono ./NUnit.ConsoleRunner.3.8.0/tools/nunit3-console.exe GalaxyShooterInternalsTest.dll -noresult
