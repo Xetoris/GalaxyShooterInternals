@@ -24,15 +24,7 @@ namespace GalaxyShooterInternals.Entities
             _health = startHealth;
         }
 
-        /// <summary>
-        ///     Deals damage to the health pool.
-        /// </summary>
-        /// <param name="amount">
-        ///     The amount of damage to deal.
-        /// </param>
-        /// <returns>
-        ///     Boolean indicating if the pool is empty.
-        /// </returns>
+        /// <inheritdoc />
         public bool Damage(int amount)
         {
             // Nothing to do if you deal less than 1 damage.
@@ -41,18 +33,12 @@ namespace GalaxyShooterInternals.Entities
                 return false;
             }
 
-            var initial = _health;
             _health -= amount;
 
             return IsDepleted();
         }
 
-        /// <summary>
-        ///     Adds health back to the health pool.
-        /// </summary>
-        /// <param name="amount">
-        ///     The amount of health to restore.
-        /// </param>
+        /// <inheritdoc />
         public void Heal(int amount)
         {
             // You can't negatively heal, so just return if value is less or equal to zero.
@@ -61,27 +47,16 @@ namespace GalaxyShooterInternals.Entities
                 return;
             }
 
-            var initial = _health;
             _health += amount;
         }
 
-        /// <summary>
-        ///     Gets the current amount of health in the pool.
-        /// </summary>
-        /// <returns>
-        ///     Amount of health available in the pool.
-        /// </returns>
+        /// <inheritdoc />
         public int Total()
         {
             return _health;
         }
 
-        /// <summary>
-        ///     Indicates if the pool is empty.
-        /// </summary>
-        /// <returns>
-        ///     Boolean indicating if the pool is empty.
-        /// </returns>
+        /// <inheritdoc />
         public bool IsDepleted()
         {
             return _health <= 0;

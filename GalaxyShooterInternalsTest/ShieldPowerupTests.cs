@@ -47,7 +47,7 @@ namespace GalaxyShooterInternalsTest
 
             ShieldPowerup powerup = new ShieldPowerup(shield, null);
 
-            Assert.AreEqual(Powerups.SHIELD, powerup.Identifier());
+            Assert.AreEqual(Powerups.Shield, powerup.Identifier());
         }
 
         [Test]

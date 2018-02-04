@@ -48,7 +48,7 @@ namespace GalaxyShooterInternalsTest
 
             WeaponChange powerup = new WeaponChange(weapon);
 
-            Assert.AreEqual(Powerups.TRIPLESHOT, powerup.Identifier());
+            Assert.AreEqual(Powerups.Tripleshot, powerup.Identifier());
         }
 
         [Test]

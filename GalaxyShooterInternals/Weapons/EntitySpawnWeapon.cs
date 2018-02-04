@@ -12,13 +12,21 @@ namespace GalaxyShooterInternals.Weapons
         /// <summary>
         ///     The object we should spawn when we fire.
         /// </summary>
-        protected GameObject _spawnObject;
+        private readonly GameObject _spawnObject;
 
         /// <summary>
         ///     The object firing the weapon.
         /// </summary>
-        protected GameObject _fireObject;
+        private readonly GameObject _fireObject;
 
+        /// <summary>
+        ///     Creates a new weapon that spawns an entity when fired.
+        /// </summary>
+        /// <param name="spawnObject">Object that fired the weapon. Used for spawn location calculation.</param>
+        /// <param name="fireObject">Object that is spawned when fired.</param>
+        /// <param name="timer">Object used to get the current time.</param>
+        /// <param name="cooldown">How long to wait till it can be fired again.</param>
+        /// <param name="startOnCooldown">Indicates if the weapon should start on cooldown.</param>
         public EntitySpawnWeapon(GameObject spawnObject,
                                  GameObject fireObject,
                                  ITimeProvider timer,
@@ -29,9 +37,7 @@ namespace GalaxyShooterInternals.Weapons
             _fireObject = fireObject;
         }
 
-        /// <summary>
-        ///     Fires the weapon by spawning the game object for the projectile.
-        /// </summary>
+        /// <inheritdoc />
         protected override void FireWeapon()
         {
             var firePosition = _fireObject.transform.position;

@@ -11,7 +11,7 @@ namespace GalaxyShooterInternals.Weapons
         /// <summary>
         ///     The amount of time to pass before the weapon is usable again.
         /// </summary>
-        private float _cooldown;
+        private readonly float _cooldown;
 
         /// <summary>
         ///     The time we must reach before firing again.
@@ -21,9 +21,15 @@ namespace GalaxyShooterInternals.Weapons
         /// <summary>
         ///     Object used to track game time.
         /// </summary>
-        private ITimeProvider _timer;
+        private readonly ITimeProvider _timer;
 
-        public CooldownWeapon(ITimeProvider timer,
+        /// <summary>
+        ///     Creates a new instance of a cooldown weapon.
+        /// </summary>
+        /// <param name="timer">Object used to track game time.</param>
+        /// <param name="cooldown">Amount of time to pass before usable again.</param>
+        /// <param name="startOnCooldown">If the weapon should start on cooldown.</param>
+        protected CooldownWeapon(ITimeProvider timer,
                               float cooldown = 0.25f,
                               bool startOnCooldown = false)
         {
