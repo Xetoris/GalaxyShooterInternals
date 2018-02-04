@@ -11,17 +11,17 @@ namespace GalaxyShooterInternals.Entities
         /// <summary>
         /// 	The default speed for a player.
         /// </summary>
-        private float _defaultSpeed;
+        private readonly float _defaultSpeed;
 
         /// <summary>
         /// 	The default weapon for a player.
         /// </summary>
-        private IWeapon _defaultWeapon;
+        private readonly IWeapon _defaultWeapon;
 
         ///	<summary>
         /// 	Represents the player's total health.
         /// </summary>
-        private IHealth _health;
+        private readonly IHealth _health;
 
         /// <summary>
         /// 	The player's shield.
@@ -67,26 +67,16 @@ namespace GalaxyShooterInternals.Entities
             _weapon = _defaultWeapon;
         }
 
-        /// <summary>
-        /// 	Fires the current weapon.
-        /// </summary>
+        /// <inheritdoc />
         public void FireWeapon()
         {
             _weapon.Fire();
         }
 
-        /// <summary>
-        /// 	Handles dealing damage to the player.
-        /// </summary>
-        /// <param name="damage">
-        /// 	The amount of damage to deal to the player.
-        /// </param>
-        /// <returns>
-        /// 	An instance of <see cref="DamageSummary"/> representing the damage transaction.
-        /// </returns>
+        /// <inheritdoc />
         public DamageSummary SufferDamage(int damage)
         {
-            DamageSummary summary = new DamageSummary();
+            var summary = new DamageSummary();
 
             // If we have a shield, remove it.
             if (_shield != null && _shield.StillAvailable())
@@ -104,42 +94,25 @@ namespace GalaxyShooterInternals.Entities
             return summary;
         }
 
-        /// <summary>
-        /// 	Applies a new IWeapon.
-        /// </summary>
-        /// <param name="weapon">
-        /// 	The <see cref="IWeapon" /> instance to change to.
-        /// </param>
+        /// <inheritdoc />
         public void ChangeWeapon(IWeapon weapon)
         {
             _weapon = weapon;
         }
 
-        /// <summary>
-        /// 	Resets the weapon back to its default.
-        /// </summary>
+        /// <inheritdoc />
         public void DefaultWeapon()
         {
             _weapon = _defaultWeapon;
         }
 
-        /// <summary>
-        /// 	Change's the sprites speed.
-        /// </summary>
-        /// <param name="speed">
-        /// 	New speed value.
-        /// </param>
+        /// <inheritdoc />
         public void ChangeSpeed(float speed)
         {
             _speed = speed;
         }
 
-        /// <summary>
-        /// 	Modifies the current speed by some multiplier value.
-        /// </summary>
-        /// <param name="modifier">
-        /// 	The value to mulitply the current speed by.
-        /// </param>
+        /// <inheritdoc />
         public void MultiplySpeed(float modifier)
         {
             // Player can't move backwards, so ignore if negative value.
@@ -151,47 +124,31 @@ namespace GalaxyShooterInternals.Entities
             _speed *= modifier;
         }
 
-        /// <summary>
-        /// 	Resets the speed back to its default.
-        /// </summary>
+        /// <inheritdoc />
         public void DefaultSpeed()
         {
             _speed = _defaultSpeed;
         }
 
-        /// <summary>
-        /// 	Returns the current speed value.
-        /// </summary>
+        /// <inheritdoc />
         public float CurrentSpeed()
         {
             return _speed;
         }
 
-        /// <summary>
-        /// 	Sets a shield on the player.
-        /// </summary>
-        /// <param name="shield">
-        /// 	An instance of <see cref="IShield"/> to apply to the player.
-        /// </param>
+        /// <inheritdoc />
         public void ApplyShield(IShield shield)
         {
             _shield = shield;
         }
 
-        /// <summary>
-        /// 	Removes the current shield on the player.
-        /// </summary>
+        /// <inheritdoc />
         public void RemoveShield()
         {
             _shield = null;
         }
 
-        /// <summary>
-        ///     Returns the current shield.
-        /// </summary>
-        /// <returns>
-        ///     An instance of <see cref="IShield"/>
-        /// </returns>
+        /// <inheritdoc />
         public IShield Shield()
         {
             return _shield;

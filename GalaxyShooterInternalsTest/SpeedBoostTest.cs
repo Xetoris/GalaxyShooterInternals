@@ -39,7 +39,7 @@ namespace GalaxyShooterInternalsTest
         {
             SpeedBoost powerup = new SpeedBoost(null);
 
-            Assert.AreEqual(Powerups.SPEED, powerup.Identifier());
+            Assert.AreEqual(Powerups.Speed, powerup.Identifier());
         }
 
         [Test]

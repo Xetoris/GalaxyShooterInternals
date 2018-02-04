@@ -20,15 +20,7 @@ namespace GalaxyShooterInternals.Shields
             _shielded = true;
         }
 
-        /// <summary>
-        ///     Applies damage to the shield.
-        /// </summary>
-        /// <param name="damage">
-        ///     The amount of damage to deal.
-        /// </param>
-        /// <returns>
-        ///     Boolean indicating if the shield has been depleted.
-        /// </returns>
+        /// <inheritdoc />
         public bool DamageShield(int damage = 1)
         {
             if (_shielded && damage > 0)
@@ -39,12 +31,7 @@ namespace GalaxyShooterInternals.Shields
             return !_shielded;
         }
 
-        /// <summary>
-        ///     Indicate if the shield is still available.
-        /// </summary>
-        /// <returns>
-        ///     Boolean indicating if the shield is still available.
-        /// </returns>
+        /// <inheritdoc />
         public bool StillAvailable()
         {
             return _shielded;

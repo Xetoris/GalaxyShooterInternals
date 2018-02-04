@@ -1,5 +1,4 @@
 ﻿using GalaxyShooterInternals.Interfaces;
-using GalaxyShooterInternals.Utility;
 
 namespace GalaxyShooterInternals.Powerups
 {
@@ -9,12 +8,12 @@ namespace GalaxyShooterInternals.Powerups
         /// <summary>
         /// 	The duration of the buff.
         /// </summary>
-        private float? _buffDuration;
+        private readonly float? _buffDuration;
 
         /// <summary>
         /// 	The <see cref="IShield" /> instance to apply to the player.
         /// </summary>
-        private IShield _shield;
+        private readonly IShield _shield;
 
         /// <summary>
         /// 	Creates a new instance of the Shield powerup!
@@ -31,43 +30,25 @@ namespace GalaxyShooterInternals.Powerups
             _shield = shield;
         }
 
-        /// <summary>
-        /// 	Applies the shield buff to the player.
-        /// </summary>
-        /// <param name="target">
-        /// 	Instance of <see cref="IShieldable"/> we need to apply the buff to.
-        /// </param>
+        /// <inheritdoc />
         public void Apply(IShieldable target)
         {
             target.ApplyShield(_shield);
         }
 
-        /// <summary>
-        /// 	Returns the duration of the buff.
-        /// </summary>
-        /// <returns>
-        /// 	Float
-        /// </returns>
+        /// <inheritdoc />
         public float? Duration()
         {
             return _buffDuration;
         }
 
-        /// <summary>
-        ///     Returns the string associated with the shield powerup.
-        /// </summary>
-        /// <returns></returns>
+        /// <inheritdoc />
         public string Identifier()
         {
-            return Utility.Powerups.SHIELD;
+            return Utility.Powerups.Shield;
         }
 
-        /// <summary>
-        /// 	Removes the buff from the player.
-        /// </summary>
-        /// <param name="target">
-        /// 	Instance of <see cref="IShieldable" /> we need to remove the buff from.
-        /// </param>
+        /// <inheritdoc />
         public void Remove(IShieldable target)
         {
             target.RemoveShield();

@@ -8,15 +8,15 @@ namespace GalaxyShooterInternals.Utility
         /// <summary>
         ///     Reference string for Shield powerup.
         /// </summary>
-        public const string SHIELD = "SHIELD";
+        public const string Shield = "SHIELD";
         /// <summary>
         ///     Reference string for speed powerup.
         /// </summary>
-        public const string SPEED = "SPEED";
+        public const string Speed = "SPEED";
         /// <summary>
         ///     Reference string for triple shot powerup.
         /// </summary>
-        public const string TRIPLESHOT = "TRIPLESHOT";
+        public const string Tripleshot = "TRIPLESHOT";
     }
 
 }
