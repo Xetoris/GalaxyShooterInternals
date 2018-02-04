@@ -8,12 +8,12 @@ namespace GalaxyShooterInternals.Powerups
         /// <summary>
         /// 	Duration of the power up effect.
         /// </summary>
-        private float? _buffDuration;
+        private readonly float? _buffDuration;
 
         /// <summary>
         /// 	Amount we multiply the speed by.
         /// </summary>
-        private float _multiplier;
+        private readonly float _multiplier;
 
         public SpeedBoost(float? duration = 10f, float multiplier = 1.5f)
         {
@@ -21,43 +21,25 @@ namespace GalaxyShooterInternals.Powerups
             _multiplier = multiplier;
         }
 
-        /// <summary>
-        /// 	Applies the speed buff to the player.
-        /// </summary>
-        /// <param name="target">
-        /// 	Instance of <see cref="ISpeedable"/> we need to apply the buff to.
-        /// </param>
+        /// <inheritdoc />
         public void Apply(ISpeedable target)
         {
             target.MultiplySpeed(_multiplier);
         }
 
-        /// <summary>
-        /// 	Returns the duration of the buff.
-        /// </summary>
-        /// <returns>
-        /// 	Float
-        /// </returns>
+        /// <inheritdoc />
         public float? Duration()
         {
             return _buffDuration;
         }
 
-        /// <summary>
-        ///     Returns the string associated with the speed powerup.
-        /// </summary>
-        /// <returns></returns>
+        /// <inheritdoc />
         public string Identifier()
         {
-            return Utility.Powerups.SPEED;
+            return Utility.Powerups.Speed;
         }
 
-        /// <summary>
-        /// 	Removes the buff from the player.
-        /// </summary>
-        /// <param name="target">
-        /// 	Instance of <see cref="ISpeedable" /> we need to remove the buff from.
-        /// </param>
+        /// <inheritdoc />
         public void Remove(ISpeedable target)
         {
             target.DefaultSpeed();

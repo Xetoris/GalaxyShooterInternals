@@ -8,12 +8,8 @@ namespace GalaxyShooterInternals.Entities
     /// </summary>
     public class GameTimeProvider : ITimeProvider
     {
-        /// <summary>
-        ///     Current value of Time.time
-        /// </summary>
-        /// <returns>
-        ///     Float
-        /// </returns>
+        
+        /// <inheritdoc />
         public float CurrentTime()
         {
             return Time.time;

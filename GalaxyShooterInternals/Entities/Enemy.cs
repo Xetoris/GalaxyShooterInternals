@@ -11,12 +11,12 @@ namespace GalaxyShooterInternals.Entities
         /// <summary>
         ///     The default speed for the entity.
         /// </summary>
-        private float _defaultSpeed;
+        private readonly float _defaultSpeed;
 
         /// <summary>
         ///     The enemy health pool.
         /// </summary>
-        private IHealth _health;
+        private readonly IHealth _health;
 
         /// <summary>
         ///     The enemy speed value.
@@ -41,52 +41,31 @@ namespace GalaxyShooterInternals.Entities
         }
 
 
-        /// <summary>
-        /// 	Handles dealing damage to the enemy.
-        /// </summary>
-        /// <param name="damage">
-        /// 	The amount of damage to deal.
-        /// </param>
-        /// <returns>
-        /// 	An instance of <see cref="DamageSummary"/> representing the damage transaction.
-        /// </returns>
+        /// <inheritdoc />
         public DamageSummary SufferDamage(int damage)
         {
-            DamageSummary summary = new DamageSummary();
-
-            summary.InitialHealth = _health.Total();
-            summary.Damaged = true;
-            summary.Defeated = _health.Damage(damage);
-            summary.RemainingHealth = _health.Total();
-
-            return summary;
+            return new DamageSummary
+            {
+                InitialHealth = _health.Total(),
+                Damaged = true,
+                Defeated = _health.Damage(damage),
+                RemainingHealth = _health.Total()
+            };;
         }
 
-        /// <summary>
-        /// 	Returns the current speed value.
-        /// </summary>
+        /// <inheritdoc />
         public float CurrentSpeed()
         {
             return _speed;
         }
 
-        /// <summary>
-        ///     Sets the new speed for the enemy.
-        /// </summary>
-        /// <param name="speed">
-        ///     New value for speed.
-        /// </param>
+        /// <inheritdoc />
         public void ChangeSpeed(float speed)
         {
             _speed = speed;
         }
 
-        /// <summary>
-        ///     Multiplies the speed of the enemy.
-        /// </summary>
-        /// <param name="modifier">
-        ///     Amount to multiply the current speed with.
-        /// </param>
+        /// <inheritdoc />
         public void MultiplySpeed(float modifier)
         {
             // Player can't move backwards, so ignore if negative value.
@@ -98,9 +77,7 @@ namespace GalaxyShooterInternals.Entities
             _speed *= modifier;
         }
 
-        /// <summary>
-        ///     Resets the speed of the enemy to its initial value.
-        /// </summary>
+        /// <inheritdoc />
         public void DefaultSpeed()
         {
             _speed = _defaultSpeed;

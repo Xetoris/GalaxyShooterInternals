@@ -8,12 +8,12 @@ namespace GalaxyShooterInternals.Powerups
         /// <summary>
         /// 	Duration of the power up effect.
         /// </summary>
-        private float? _buffDuration;
+        private readonly float? _buffDuration;
 
         /// <summary>
         /// 	Weapon upgrade to apply.
         /// </summary>
-        private IWeapon _newWeapon;
+        private readonly IWeapon _newWeapon;
 
         /// <summary>
         /// 	Creates a new instance of our weapon buff!
@@ -30,43 +30,25 @@ namespace GalaxyShooterInternals.Powerups
             _buffDuration = duration;
         }
 
-        /// <summary>
-        /// 	Applies the weapon buff to the player.
-        /// </summary>
-        /// <param name="target">
-        /// 	Instance of <see cref="IArmable"/> we need to apply the buff to.
-        /// </param>
+        /// <inheritdoc />
         public void Apply(IArmable target)
         {
             target.ChangeWeapon(_newWeapon);
         }
 
-        /// <summary>
-        /// 	Returns the duration of the buff.
-        /// </summary>
-        /// <returns>
-        /// 	Float
-        /// </returns>
+        /// <inheritdoc />
         public float? Duration()
         {
             return _buffDuration;
         }
 
-        /// <summary>
-        ///     Returns the string associated with the tripleshot powerup.
-        /// </summary>
-        /// <returns></returns>
+        /// <inheritdoc />
         public string Identifier()
         {
-            return Utility.Powerups.TRIPLESHOT;
+            return Utility.Powerups.Tripleshot;
         }
 
-        /// <summary>
-        /// 	Removes the buff from the player.
-        /// </summary>
-        /// <param name="target">
-        /// 	Instance of <see cref="IArmable" /> we need to remove the buff from.
-        /// </param>
+        /// <inheritdoc />
         public void Remove(IArmable target)
         {
             target.DefaultWeapon();

@@ -10,31 +10,31 @@ namespace GalaxyShooterInternals.Movement
         /// <summary>
         /// 	Instance of <see cref="UnityEngine.Camera"/> used to calculate viewport bound movement.
         /// </summary>
-        private Camera _camera;
+        private readonly Camera _camera;
 
         /// <summary>
         /// 	A viewport relative value indicating the maximum value for the top of the viewport.
         /// 	By default the upper bound limit is 1f (the top of the visible area).
         /// </summary>
-        private float _upperViewportBound;
+        private readonly float _upperViewportBound;
 
         /// <summary>
         /// 	A viewport relative value indicating the minimum value for the bottom of the viewport.
         /// 	By default the lower bound limit is 0f (the bottom of the visible area).
         /// </summary>
-        private float _lowerViewportBound;
+        private readonly float _lowerViewportBound;
 
         /// <summary>
         /// 	A viewport relative value indicating the maximum value for the right of the viewport.
         /// 	By default the upper bound limit is 1f (the far right of the visible area).
         /// </summary>
-        private float _rightViewportBound;
+        private readonly float _rightViewportBound;
 
         /// <summary>
         /// 	A viewport relative value indicating the minimum value for the left of the viewport.
         /// 	By default the lower bound limit is 0f (the far left of the visible area).
         /// </summary>
-        private float _leftViewportBound;
+        private readonly float _leftViewportBound;
 
         #region Constructors
 
@@ -182,10 +182,10 @@ namespace GalaxyShooterInternals.Movement
                                              float rightViewportBound = 1f,
                                             float leftViewportBound = 0f)
         {
-            float x = xInput;
-            float y = yInput;
+            var x = xInput;
+            var y = yInput;
 
-            Vector3 viewPos = camera.WorldToViewportPoint(origin);
+            var viewPos = camera.WorldToViewportPoint(origin);
 
             // Check Bounds
             if ((y > 0 && viewPos.y >= upperViewportBound) || (y < 0 && viewPos.y <= lowerViewportBound))
