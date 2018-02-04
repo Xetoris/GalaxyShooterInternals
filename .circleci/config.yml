@@ -13,5 +13,8 @@ jobs:
           name: Build Project
           command: xbuild ./GalaxyShooterInternals.sln    
       - run:
+          name: Test
+          command: ls -l    
+      - run:
           name: Run the Test Command
           command: mono ./NUnit.ConsoleRunner.3.8.0/tools/nunit3-console.exe GalaxyShooterInternalsTest.dll -noresult
