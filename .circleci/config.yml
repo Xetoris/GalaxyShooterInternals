@@ -11,7 +11,7 @@ jobs:
           command: nuget install NUnit.Runners
       - run:
           name: Build the Image
-          command: docker build -t test-build .
+          command: build -t test-build .
       - run:
           name: Run the Test Command
-          command: docker run test-build mono ./NUnit.ConsoleRunner.3.7.0/tools/nunit3-console.exe GalaxyShooterInternalsTest.dll -noresult
+          command: run test-build mono ./NUnit.ConsoleRunner.3.7.0/tools/nunit3-console.exe GalaxyShooterInternalsTest.dll -noresult
