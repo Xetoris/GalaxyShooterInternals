@@ -3,10 +3,12 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/ruby
+      - image: mono:onbuild
     steps:
       - checkout
-      - setup_remote_docker
+      - run:
+          name: Setup NUnit
+          command: nuget install NUnit.Runners
       - run:
           name: Build the Image
           command: docker build -t test-build .
