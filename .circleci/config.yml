@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run:
           name: Setup NUnit
-          command: nuget install NUnit.Runners && nuget package restore
+          command: nuget install NUnit.Runners && nuget restore ./GalaxyShooterInternals.sln
       - run:
           name: Build Project
           command: xbuild ./GalaxyShooterInternals.sln    
