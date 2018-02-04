@@ -9,9 +9,6 @@ jobs:
       - run:
           name: Setup NUnit
           command: nuget install NUnit.Runners
-      - run:
-          name: Build the Image
-          command: build -t test-build .
-      - run:
+       - run:
           name: Run the Test Command
-          command: run test-build mono ./NUnit.ConsoleRunner.3.7.0/tools/nunit3-console.exe GalaxyShooterInternalsTest.dll -noresult
+          command: mono ./NUnit.ConsoleRunner.3.7.0/tools/nunit3-console.exe GalaxyShooterInternalsTest.dll -noresult
