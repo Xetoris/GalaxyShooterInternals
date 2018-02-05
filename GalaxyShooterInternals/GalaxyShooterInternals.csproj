@@ -78,7 +78,7 @@
     <Compile Include="Weapons\EntitySpawnWeapon.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="libs\UnityEngine.dll" />
+    <Folder Include="libs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
